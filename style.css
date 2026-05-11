@@ -197,4 +197,96 @@
       .section-title h2{
         font-size: 32px;
       }
+          .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+      background: var(--color-dark-green);
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(179,175,140,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 15%, rgba(201,169,110,0.08) 0%, transparent 45%),
+        radial-gradient(ellipse at 70% 80%, rgba(47,73,54,0.5) 0%, transparent 50%);
+    }
+    /* Ornamental vertical lines */
+    .hero-line { position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, rgba(201,169,110,0.2), transparent); }
+    .hero-line:nth-child(1) { left: 33%; }
+    .hero-line:nth-child(2) { left: 66%; }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      width: 100%; max-width: 1200px; margin: 0 auto;
+      padding: 8rem 5% 5rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 4rem;
+    }
+    .hero-text { animation: fadeUp 0.9s ease both; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--color-gold); margin-bottom: 1.5rem;
+    }
+    .hero-badge::before, .hero-badge::after { content: ''; width: 32px; height: 1px; background: var(--color-gold); }
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 600; line-height: 1.18;
+      color: var(--color-cream); margin-bottom: 1.5rem;
+    }
+    .hero-title em { font-style: italic; color: var(--color-gold); }
+    .hero-desc {
+      font-size: 0.92rem; line-height: 1.9;
+      color: rgba(242,240,228,0.7); max-width: 440px; margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* Hero right — decorative logo display */
+    .hero-visual {
+      display: flex; align-items: center; justify-content: center;
+      animation: fadeIn 1.2s ease 0.3s both;
+      position: relative;
+    }
+    .hero-logo-ring {
+      position: relative;
+      width: 320px; height: 320px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-logo-ring::before {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.25);
+      animation: rotateSlow 30s linear infinite;
+    }
+    .hero-logo-ring::after {
+      content: '';
+      position: absolute;
+      inset: 20px;
+      border-radius: 50%;
+      border: 1px dashed rgba(179,175,140,0.2);
+    }
+    .hero-logo-inner {
+      width: 200px; height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    /* Gold foil logo SVG recreation */
+    .hero-logo-svg { width: 160px; height: 160px; filter: drop-shadow(0 0 30px rgba(201,169,110,0.3)); }
+    /* Stats strip below logo */
+    .hero-stats {
+      position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 2px; background: rgba(26,42,30,0.9);
+      border: 1px solid rgba(201,169,110,0.3); border-radius: 2px; overflow: hidden;
+    }
+    .hero-stat {
+      padding: 0.8rem 1.5rem; text-align: center;
+      border-right: 1px solid rgba(201,169,110,0.2);
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--color-gold); display: block; }
+    .hero-stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,240,228,0.5); margin-top: 2px; }
     }
