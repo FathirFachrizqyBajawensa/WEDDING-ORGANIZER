@@ -115,6 +115,10 @@ body {
   background: var(--color-cream);
   color: var(--color-text-dark);
   overflow-x: hidden;
+  display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .container{
@@ -539,3 +543,65 @@ table tr:hover td{
     grid-template-columns: 1fr;
   }
 }
+
+/* ================================================
+   NEW ADDITIONS (Modal & Fixed Footer Logic)
+   ================================================ */
+
+/* Modal Pop-up */
+.overlay-registrasi {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--color-dark-green);
+    z-index: 10000;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mencegah scroll saat modal muncul */
+.modal-open { overflow: hidden; }
+
+/* Menyembunyikan Beranda */
+.content-hidden { display: none; }
+
+/* Responsive Grid untuk Modal */
+@media (max-width: 850px) {
+    .register-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    .register-brand-panel { display: none; } /* Sembunyikan panel gambar di HP */
+    .form-grid { grid-template-columns: 1fr; } /* Input jadi 1 kolom */
+}
+
+/* Logic Dorong Footer ke Bawah */
+main {
+    flex: 1; /* Konten utama mengambil sisa ruang yang ada */
+}
+
+.footer {
+    margin-top: auto; /* Mendorong footer ke paling dasar */
+}/* CSS Tambahan Logika Pop-up & Footer */
+.overlay-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #2f4936; /* Warna Hijau Luminara */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.modal-open { overflow: hidden; } /* Biar gak bisa scroll pas daftar */
+.content-hidden { display: none; } /* Sembunyikan beranda dulu */
+
+/* Paksa Footer ke Bawah */
+#halamanBeranda {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.main-content { flex: 1; }
