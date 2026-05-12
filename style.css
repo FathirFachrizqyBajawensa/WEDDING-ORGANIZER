@@ -230,6 +230,7 @@ body {
     .hero-stat-num { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--color-gold); display: block; }
     .hero-stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,240,228,0.5); margin-top: 2px; }
 
+
     /* ================================================
        SECTION: WHY LUMINARA
        ================================================ */
