@@ -367,6 +367,7 @@ body {
 .footer-divider { height: 1px; background: rgba(154,141,123,0.2); max-width: 400px; margin: 0 auto 2rem; }
 .footer-copy { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: var(--color-taupe); opacity: 0.5; }
 .footer-note { font-size: 0.7rem; opacity: 0.5; }
+.footer-logo { width: 180px; height: 90px; max-height: 100px; object-fit: contain; display: block; margin: 0 auto; }
 
 /* SECTION TITLE */
 .section-title{
