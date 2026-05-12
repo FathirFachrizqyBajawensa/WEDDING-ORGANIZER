@@ -1,301 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="style.css">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-
-    
-** AWAL REGISTRASI**
-<body>
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daftar Akun — Luminara Wedding Organizer</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Memanggil File CSS Eksternal -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-  <nav class="navbar">
-    <a href="beranda.html" class="nav-brand">Luminara</a>
-    <ul class="nav-links">
-      <li><a href="beranda.html">Beranda</a></li>
-      <li><a href="paket.html">Paket</a></li>
-      <li><a href="login.html" class="btn-nav">Masuk</a></li>
-    </ul>
-  </nav>
+<body class="modal-open">
 
-  <main class="register-wrapper">
-    <!-- Panel Kiri -->
-    <div class="register-brand-panel">
-      <div class="brand-content">
-        <h1>Bergabunglah</h1>
-        <p>Wujudkan pernikahan impian Anda bersama layanan profesional dari Luminara Wedding Organizer.</p>
-      </div>
-    </div>
+  <!-- ================================= AWAL REGISTRASI ================================= -->
 
-    <!-- Panel Kanan -->
-    <div class="register-form-panel">
-      <div class="register-form-inner">
-        <div class="form-eyebrow">Akun Baru</div>
-        <h2 class="form-title">Daftar Sekarang</h2>
+  <div id="modalRegistrasi" class="overlay-registrasi">
+    <main class="register-wrapper">
 
-        <div class="form-alert error" id="alertError">
-          <span id="alertErrorMsg">Terjadi kesalahan.</span>
+      <div class="register-brand-panel">
+        <div class="brand-content">
+          <h1>Bergabunglah</h1>
+          <p>Wujudkan pernikahan impian Anda bersama layanan profesional dari Luminara Wedding Organizer.</p>
         </div>
+      </div>
 
-        <form id="registerForm">
-          <div class="form-grid">
-            <div class="form-group full-width">
-              <label class="form-label">Nama Lengkap</label>
-              <input type="text" id="fullname" class="form-input" placeholder="Nama lengkap Anda">
-            </div>
+      <div class="register-form-panel">
+        <div class="register-form-inner">
 
-            <div class="form-group full-width">
-              <label class="form-label">Alamat Email</label>
-              <input type="email" id="email" class="form-input" placeholder="email@contoh.com">
-            </div>
+          <div class="form-eyebrow">Akun Baru</div>
+          <h2 class="form-title">Daftar Sekarang</h2>
 
-            <div class="form-group full-width">
-              <label class="form-label">Nomor WhatsApp</label>
-              <input type="tel" id="whatsapp" class="form-input" placeholder="0812xxxxxxxx">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Kata Sandi</label>
-              <input type="password" id="password" class="form-input" placeholder="Min. 6 karakter">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Konfirmasi</label>
-              <input type="password" id="confirmPassword" class="form-input" placeholder="Ulangi sandi">
-            </div>
+          <div class="form-alert error" id="alertError">
+            <span id="alertErrorMsg">Terjadi kesalahan.</span>
           </div>
 
-          <button type="submit" class="btn-submit" id="btnSubmit">Buat Akun</button>
-        </form>
+          <form id="registerForm">
+            <div class="form-grid">
 
-        <div class="login-redirect">
-          Sudah memiliki akun? <a href="login.html">Masuk</a>
+              <div class="form-group full-width">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" id="fullname" class="form-input" placeholder="Nama lengkap Anda">
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Alamat Email</label>
+                <input type="email" id="email" class="form-input" placeholder="email@contoh.com">
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Nomor WhatsApp</label>
+                <input type="tel" id="whatsapp" class="form-input" placeholder="0812xxxxxxxx">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kata Sandi</label>
+                <input type="password" id="password" class="form-input" placeholder="Min. 6 karakter">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Konfirmasi</label>
+                <input type="password" id="confirmPassword" class="form-input" placeholder="Ulangi sandi">
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn-submit" id="btnSubmit">Buat Akun</button>
+          </form>
+
+          <div class="login-redirect">
+            Sudah memiliki akun? <a href="login.html">Masuk</a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </main>
 
-  <footer class="footer">
-    <p class="footer-brand">Luminara</p>
-    <p class="footer-copy">© 2025 Luminara Wedding Organizer.</p>
-  </footer>
+    </main>
+  </div>
 
-  <!-- Memanggil File JavaScript Eksternal -->
-  <script src="script.js"></script>
-</body>
-</html> 
-** PENUTUP   REGISTRASI**
+  <!-- ================================= PENUTUP REGISTRASI ================================= -->
 
 
 
-    
-**LOGIN**
+  <!-- ================================= LOGIN ================================= -->
 
 
 
 
-**BERANDA**
+  <!-- ================================= BERANDA ================================= -->
+
+  <div id="halamanBeranda" class="content-hidden">
 
     <!--======================================================= LAYER 1 ===============================================================/-->
 
-    
-<nav class="navbar" id="navbar">
-    <a href="beranda.html" class="nav-logo">
-      <!-- Logo Image -->
-      <img src="UMINARA (3240 x 1080 piksel).png" alt="Logo Luminara" class="nav-logo-svg">
-      <span class="nav-brand"></span>
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Buka Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="beranda.html" class="active">Beranda</a></li>
-      <li><a href="paket.html">Paket</a></li>
-      <li><a href="booking.html">Booking</a></li>
-      <li><a href="tracking.html">Tracking</a></li>
-      <li><a href="login.html" class="btn-nav">Masuk</a></li>
-    </ul>
-  </nav>
-<section class="hero">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-line"></div>
-    <div class="hero-line"></div>
+    <nav class="navbar" id="navbar">
 
-    <div class="hero-content">
-      <!-- Teks Kiri -->
-      <div class="hero-text">
-        <div class="hero-badge">Wedding Organizer</div>
-        <h1 class="hero-title">
-          Wujudkan Hari<br>
-          <em class="hero-gold"><i>Paling Indah</i></em><br>
-          Dalam Hidupmu
-        </h1>
-        <p class="hero-desc">
-          Luminara hadir untuk merancang setiap detail pernikahanmu dengan penuh kasih dan ketelitian, dari dekorasi hingga momen terakhir yang tak terlupakan.
-        </p>
-        <div class="hero-cta">
-          <a href="paket.html" class="btn-primary">Lihat Paket</a>
-          <a href="booking.html" class="btn-outline">Konsultasi Gratis</a>
-        </div>
-      </div>
+      <a href="beranda.html" class="nav-logo">
+        <img src="UMINARA (3240 x 1080 piksel).png" alt="Logo Luminara" class="nav-logo-svg">
+        <span class="nav-brand"></span>
+      </a>
 
-      <!-- Visual Kanan -->
-      <div class="hero-visual">
-        <div class="hero-logo-ring">
-          <!-- Dekorasi lingkaran ada via CSS ::before/::after -->
-          <div class="hero-logo-inner">
-            <!-- Logo Image -->
-            <img src="logo-removebg-preview.png" alt="Logo Luminara" class="hero-logo-svg">
+      <button class="hamburger" id="hamburger" aria-label="Buka Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="beranda.html" class="active">Beranda</a></li>
+        <li><a href="paket.html">Paket</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="tracking.html">Tracking</a></li>
+        <li><a href="login.html" class="btn-nav">Masuk</a></li>
+      </ul>
+
+    </nav>
+
+    <main>
+
+      <section class="hero">
+
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-line"></div>
+        <div class="hero-line"></div>
+
+        <div class="hero-content">
+
+          <div class="hero-text">
+
+            <div class="hero-badge">Wedding Organizer</div>
+
+            <h1 class="hero-title">
+              Wujudkan Hari<br>
+              <em class="hero-gold"><i>Paling Indah</i></em><br>
+              Dalam Hidupmu
+            </h1>
+
+            <p class="hero-desc">
+              Luminara hadir untuk merancang setiap detail pernikahanmu dengan penuh kasih dan ketelitian, dari dekorasi hingga momen terakhir yang tak terlupakan.
+            </p>
+
+            <div class="hero-cta">
+              <a href="paket.html" class="btn-primary">Lihat Paket</a>
+              <a href="booking.html" class="btn-outline">Konsultasi Gratis</a>
+            </div>
+
           </div>
-          <!-- Stats strip -->
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <span class="hero-stat-num">500+</span>
-              <span class="hero-stat-label">Pasangan</span>
+
+          <div class="hero-visual">
+
+            <div class="hero-logo-ring">
+
+              <div class="hero-logo-inner">
+                <img src="logo-removebg-preview.png" alt="Logo Luminara" class="hero-logo-svg">
+              </div>
+
+              <div class="hero-stats">
+
+                <div class="hero-stat">
+                  <span class="hero-stat-num">500+</span>
+                  <span class="hero-stat-label">Pasangan</span>
+                </div>
+
+                <div class="hero-stat">
+                  <span class="hero-stat-num">8+</span>
+                  <span class="hero-stat-label">Tahun</span>
+                </div>
+
+                <div class="hero-stat">
+                  <span class="hero-stat-num">4.9★</span>
+                  <span class="hero-stat-label">Rating</span>
+                </div>
+
+              </div>
+
             </div>
-            <div class="hero-stat">
-              <span class="hero-stat-num">8+</span>
-              <span class="hero-stat-label">Tahun</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-num">4.9★</span>
-              <span class="hero-stat-label">Rating</span>
-            </div>
+
           </div>
+
         </div>
-      </div>
-    </div>
-  </section>
 
+      </section>
 
-    <!--====================================================================== LAYER 2 ========================================================//-->
+      <!--====================================================================== LAYER 2 ========================================================//-->
 
-    
-<!-- PACKAGE -->
-<section class="packages">
-  <div class="container">
+      <section class="packages">
 
-    <div class="section-title">
-      <h2>Paket Pernikahan Adat</h2>
-      <p>Pilih paket berdasarkan adat pernikahan impian Anda</p>
-    </div>
+        <div class="container">
 
-    <div class="package-wrapper">
+          <div class="section-title">
+            <h2>Paket Pernikahan Adat</h2>
+            <p>Pilih paket berdasarkan adat pernikahan impian Anda</p>
+          </div>
 
-      <!-- PALEMBANG -->
-      <div class="package-card">
-        <img src="d:\Downloads\001090c7fd4b7948ff6807a9ab9dd9e0.jpg">
-        <h3>Palembang</h3>
-        <a href="#" class="btn">Pilih Paket</a>
-      </div>
+          <div class="package-wrapper">
 
-      <!-- JAWA -->
-      <div class="package-card">
-        <img src="d:\Downloads\chadic_d2_c3_2152-1442736309.jpg">
-        <h3>Jawa</h3>
-        <a href="#" class="btn">Pilih Paket</a>
-      </div>
+            <div class="package-card">
+              <img src="d:\Downloads\001090c7fd4b7948ff6807a9ab9dd9e0.jpg">
+              <h3>Palembang</h3>
+              <a href="#" class="btn">Pilih Paket</a>
+            </div>
 
-      <!-- BALI -->
-      <div class="package-card">
-        <img src="d:\Downloads\BCA-3197.jpg">
-        <h3>Bali</h3>
-        <a href="#" class="btn">Pilih Paket</a>
-      </div>
+            <div class="package-card">
+              <img src="d:\Downloads\chadic_d2_c3_2152-1442736309.jpg">
+              <h3>Jawa</h3>
+              <a href="#" class="btn">Pilih Paket</a>
+            </div>
 
-    </div>
-  </div>
-</section>
+            <div class="package-card">
+              <img src="d:\Downloads\BCA-3197.jpg">
+              <h3>Bali</h3>
+              <a href="#" class="btn">Pilih Paket</a>
+            </div>
 
+          </div>
 
-    <!--============================================================ LAYER 3 ================================================================//-->
+        </div>
 
-    
-<!-- SERVICES -->
-<section class="services">
-  <div class="container">
+      </section>
 
-    <div class="section-title">
-      <h2>Layanan Tambahan</h2>
-      <p>Tambahkan layanan ekstra untuk acara yang lebih spesial</p>
-    </div>
+      <!--============================================================ LAYER 3 ================================================================//-->
 
-    <div class="service-table">
-      <table>
-        <tr>
-          <th>Layanan</th>
-          <th>Harga</th>
-        </tr>
+      <section class="services">
 
-        <tr>
-          <td>Prewedding Photoshoot</td>
-          <td>Rp3.000.000</td>
-        </tr>
+        <div class="container">
 
-        <tr>
-          <td>Photobooth</td>
-          <td>Rp1.500.000</td>
-        </tr>
+          <div class="section-title">
+            <h2>Layanan Tambahan</h2>
+            <p>Tambahkan layanan ekstra untuk acara yang lebih spesial</p>
+          </div>
 
-        <tr>
-          <td>Live Streaming</td>
-          <td>Rp2.500.000</td>
-        </tr>
+          <div class="service-table">
 
-        <tr>
-          <td>Undangan Digital</td>
-          <td>Rp800.000</td>
-        </tr>
+            <table>
 
-      </table>
-    </div>
+              <tr>
+                <th>Layanan</th>
+                <th>Harga</th>
+              </tr>
 
-  </div>
+              <tr>
+                <td>Prewedding Photoshoot</td>
+                <td>Rp3.000.000</td>
+              </tr>
 
+              <tr>
+                <td>Photobooth</td>
+                <td>Rp1.500.000</td>
+              </tr>
+
+              <tr>
+                <td>Live Streaming</td>
+                <td>Rp2.500.000</td>
+              </tr>
+
+              <tr>
+                <td>Undangan Digital</td>
+                <td>Rp800.000</td>
+              </tr>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
 
     <!--=================================================================== LAYER 4 =============================================================-->
 
-
-**PAKET**
-
-
-
-
-**DETAIL PAKET**
+    <!--PAKET-->
 
 
 
 
-**BOOKING PEMESANAN**
+    <!--DETAIL PAKET-->
 
 
 
 
-**TRACKING STATUS
+    <!--BOOKING PEMESANAN-->
 
 
 
 
-<script src="java.js" >
-</script>
+
+    <!--TRACKING STATUS-->
+
+
+
+
+    <!--================================ FOOTER ================================= -->
+
+    <footer class="footer">
+
+      <p class="footer-brand">Luminara</p>
+      <p class="footer-tagline">Crafting Timeless Moments</p>
+
+      <nav class="footer-links">
+        <a href="beranda.html">Beranda</a>
+        <a href="paket.html">Paket</a>
+        <a href="booking.html">Booking</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="registrasi.html">Daftar</a>
+        <a href="login.html">Masuk</a>
+      </nav>
+
+      <div class="footer-divider"></div>
+
+      <p class="footer-copy">© 2025 Luminara Wedding Organizer. All rights reserved.</p>
+
+    </footer>
+
+  </div>
+
+  <script src="java.js"></script>
+
 </body>
 </html>
