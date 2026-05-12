@@ -134,12 +134,13 @@ body {
 /*=========================================================BERANDA===============================================================*/
 
 
-.hero {
+ .hero {
       min-height: 100vh;
       position: relative;
       display: flex; align-items: center;
       overflow: hidden;
-      background: var(--color-dark-green);
+      background: linear-gradient(rgba(47,73,54,0.65), rgba(47,73,54,0.65)),
+        url("Wedding detail shot!!.jpg") center/cover no-repeat;
     }
     .hero-bg-pattern {
       position: absolute; inset: 0; pointer-events: none;
@@ -149,20 +150,20 @@ body {
         radial-gradient(ellipse at 70% 80%, rgba(47,73,54,0.5) 0%, transparent 50%);
     }
     /* Ornamental vertical lines */
-    .hero-line { position: absolute; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, rgba(201,169,110,0.2), transparent); }
-    .hero-line:nth-child(1) { left: 33%; }
-    .hero-line:nth-child(2) { left: 66%; }
+    .hero-line { position: absolute; top: 0; bottom: 0; width: 1.5px; background: linear-gradient(to bottom, transparent, rgba(201,169,110,0.28), transparent); }
+    .hero-line:nth-child(1) { left: 31%; }
+    .hero-line:nth-child(2) { left: 65%; }
 
     .hero-content {
       position: relative; z-index: 2;
-      width: 100%; max-width: 1200px; margin: 0 auto;
+      width: 100%; max-width: 1300px; margin: 0 auto;
       padding: 8rem 5% 5rem;
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.7fr);
       align-items: center; gap: 4rem;
     }
     .hero-text { animation: fadeUp 0.9s ease both; }
     .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.75rem;
+      display: inline-flex; align-items: center; gap: 0.7rem;
       font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em;
       text-transform: uppercase; color: var(--color-gold); margin-bottom: 1.5rem;
     }
@@ -189,25 +190,25 @@ body {
     }
     .hero-logo-ring {
       position: relative;
-      width: 320px; height: 320px;
+      width: 380px; height: 380px;
       display: flex; align-items: center; justify-content: center;
     }
     .hero-logo-ring::before {
       content: '';
       position: absolute; inset: 0;
       border-radius: 50%;
-      border: 1px solid rgba(201,169,110,0.25);
+      border: 1.5px solid rgba(201,169,110,0.28);
       animation: rotateSlow 30s linear infinite;
     }
     .hero-logo-ring::after {
       content: '';
       position: absolute;
-      inset: 20px;
+      inset: 18px;
       border-radius: 50%;
-      border: 1px dashed rgba(179,175,140,0.2);
+      border: 1px dashed rgba(179,175,140,0.3);
     }
     .hero-logo-inner {
-      width: 200px; height: 200px;
+      width: 240px; height: 240px;
       display: flex; align-items: center; justify-content: center;
       position: relative;
     }
@@ -227,22 +228,77 @@ body {
     .hero-stat-num { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--color-gold); display: block; }
     .hero-stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,240,228,0.5); margin-top: 2px; }
 
+    /* ================================================
+       SECTION: WHY LUMINARA
+       ================================================ */
+    .section-why {
+      background: var(--color-cream); padding: 7rem 5%;
+    }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--color-taupe); margin-bottom: 1rem;
+    }
+    .section-eyebrow::before, .section-eyebrow::after { content: ''; width: 24px; height: 1px; background: var(--color-sage); }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 600; color: var(--color-dark-green); line-height: 1.25;
+    }
+    .section-title em { font-style: italic; color: var(--color-taupe); }
+
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .why-card {
+      background: var(--color-white);
+      padding: 3rem 2.5rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .why-card:hover { transform: translateY(-4px); }
+    .why-card::before {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: linear-gradient(to right, var(--color-dark-green), var(--color-gold));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .why-card:hover::before { transform: scaleX(1); }
+    .why-icon {
+      width: 52px; height: 52px;
+      background: rgba(47,73,54,0.08);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .why-icon svg { width: 24px; height: 24px; stroke: var(--color-dark-green); fill: none; stroke-width: 1.5; }
+    .why-num {
+      font-family: 'Cinzel', serif; font-size: 3rem; font-weight: 700;
+      color: rgba(47,73,54,0.07); position: absolute; top: 1.5rem; right: 2rem;
+      line-height: 1;
+    }
+    .why-card-title {
+      font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 600;
+      color: var(--color-dark-green); margin-bottom: 0.75rem;
+    }
+    .why-card-desc { font-size: 0.85rem; line-height: 1.85; color: var(--color-text-muted); font-weight: 400; }
+
 
 //===========================================================================================================================================//
 
 
-.navbar {
+ .navbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 5%;
-      background: rgba(47, 73, 54, 0.97);
+      padding: 0.3rem 4.5%;
+      background: rgba(47, 73, 54, 0.95);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(201,169,110,0.3);
+      border-bottom: 1px solid rgba(242,240,228,0.18);
       transition: padding 0.3s;
     }
-    .navbar.scrolled { padding: 0.8rem 5%; }
+    .navbar.scrolled { padding: 0.3rem 4.5%; }
     .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .nav-logo-svg { width: 36px; height: 36px; }
+    .nav-logo-svg { width: 150px; height: 50px; max-height: 100px; object-fit: contain; display: block; }
     .nav-brand { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--color-gold); letter-spacing: 0.08em; }
     .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
     .nav-links a {
@@ -251,11 +307,26 @@ body {
       color: var(--color-cream); text-decoration: none; transition: color 0.3s;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--color-gold); }
-    .btn-nav { padding: 0.5rem 1.4rem !important; border: 1px solid var(--color-gold); border-radius: 2px; color: var(--color-gold) !important; }
+    .btn-nav { padding: 0.35rem 1.1rem !important; font-size: 0.75rem; border: 1px solid var(--color-gold); border-radius: 2px; color: var(--color-gold) !important; }
     .btn-nav:hover { background: var(--color-gold); color: var(--color-dark-green) !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { width: 24px; height: 2px; background: var(--color-cream); display: block; transition: 0.3s; }
-
+.btn-primary {
+      font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 1rem 2.5rem; background: var(--color-gold);
+      color: var(--color-dark-green); border: none; border-radius: 2px;
+      cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;
+    }
+    .btn-primary:hover { background: var(--color-gold-light); transform: translateY(-2px); }
+    .btn-outline {
+      font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 1rem 2.5rem; background: transparent;
+      color: var(--color-cream); border: 1px solid rgba(242,240,228,0.5);
+      border-radius: 2px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s ease;
+    }
+    .btn-outline:hover { background: rgba(242,240,228,0.1); border-color: var(--color-cream); }
     :root {
       --color-dark-green: #2f4936;
       --color-cream:      #f2f0e4;
