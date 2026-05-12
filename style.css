@@ -135,11 +135,11 @@ body {
 }
 .navbar.scrolled { padding: 0.3rem 4.5%; }
 .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-.nav-logo-svg { width: 150px; height: 50px; max-height: 100px; object-fit: contain; display: block; }
+.nav-logo-svg { width: 180px; height: 90px; max-height: 100px; object-fit: contain; display: block; }
 .nav-brand { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--color-gold); letter-spacing: 0.08em; }
 .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
 .nav-links a {
-  font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 500;
+  font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--color-cream); text-decoration: none; transition: color 0.3s;
 }
@@ -208,6 +208,7 @@ body {
   font-weight: 600; line-height: 1.18;
   color: var(--color-cream); margin-bottom: 1.5rem;
 }
+.hero-gold { color: var(--color-gold); font-style: normal; text-shadow: 0 0 10px rgba(201,169,110,0.3); }
 .hero-desc {
   font-size: 0.92rem;
   line-height: 1.9;
@@ -272,11 +273,11 @@ body {
   border: 1px solid rgba(201,169,110,0.3); border-radius: 2px; overflow: hidden;
 }
 .hero-stat {
-  padding: 0.8rem 1.5rem; text-align: center;
+  padding: 1.2rem 2rem; text-align: center;
   border-right: 1px solid rgba(201,169,110,0.2);
 }
 .hero-stat:last-child { border-right: none; }
-.hero-stat-num { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--color-gold); display: block; }
+.hero-stat-num { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--color-gold); display: block; }
 .hero-stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,240,228,0.5); margin-top: 2px; }
 
 @keyframes pulseLogo {
