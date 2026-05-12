@@ -7,46 +7,41 @@ document.addEventListener('DOMContentLoaded', () => {
     registerForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Mengambil nilai input
-        const fullname = document.getElementById('fullname').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const whatsapp = document.getElementById('whatsapp').value.trim();
         const pass = document.getElementById('password').value;
         const confirm = document.getElementById('confirmPassword').value;
+        const fullname = document.getElementById('fullname').value;
+        const email = document.getElementById('email').value;
 
         // Validasi Sederhana
-        if (!fullname || !email || !whatsapp) {
-            showAlert("Semua kolom wajib diisi.");
+        if (!fullname || !email || !pass || !confirm) {
+            showError("Mohon lengkapi semua data.");
             return;
         }
 
         if (pass !== confirm) {
-            showAlert("Konfirmasi kata sandi tidak cocok.");
+            showError("Konfirmasi kata sandi tidak cocok.");
             return;
         }
 
         if (pass.length < 6) {
-            showAlert("Kata sandi minimal harus 6 karakter.");
+            showError("Kata sandi minimal 6 karakter.");
             return;
         }
 
-        // Jika validasi lolos
+        // Simulasi Sukses
         alertError.classList.remove('show');
-        btnSubmit.textContent = "Mendaftarkan...";
+        btnSubmit.textContent = "Memproses...";
         btnSubmit.disabled = true;
 
-        // Simulasi pengiriman data ke server
         setTimeout(() => {
-            alert("Pendaftaran Berhasil! Selamat datang di Luminara.");
+            alert("Akun berhasil dibuat!");
             window.location.href = 'login.html';
-        }, 1500);
+        }, 1000);
     });
 
-    function showAlert(message) {
+    function showError(message) {
         alertMsg.textContent = message;
         alertError.classList.add('show');
-        // Scroll ke atas alert agar terlihat
-        alertError.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 });
 
