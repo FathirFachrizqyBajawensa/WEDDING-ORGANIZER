@@ -1,3 +1,5 @@
+
+//AWAL REGISTRASI//
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
     const alertError = document.getElementById('alertError');
@@ -44,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         alertError.classList.add('show');
     }
 });
+
+//AKHIR REGISTRASI REGISTRASI//
 
 
 // =============================================FOOTER HEADER========================================================= //
