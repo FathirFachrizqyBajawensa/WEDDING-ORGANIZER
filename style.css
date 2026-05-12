@@ -216,9 +216,9 @@ body {
 }
 .hero-cta { 
   display: flex; 
-  gap: 2rem; /* Ubah dari 1rem ke nilai yang lebih besar */
+  gap: 2rem; 
   flex-wrap: wrap; 
-  margin-top: 1rem; /* Opsional: menambah jarak antara teks deskripsi dengan deretan button */
+  margin-top: 1rem; 
 }
 /* Hero right — decorative logo display */
 .hero-visual {
