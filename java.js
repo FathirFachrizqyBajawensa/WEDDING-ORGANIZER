@@ -1,4 +1,3 @@
-
 //AWAL REGISTRASI//
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
@@ -37,7 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
             alert("Akun berhasil dibuat!");
-            window.location.href = 'login.html';
+            
+            // --- TAMBAHAN: NUTUP MODAL & BUKA BERANDA ---
+            document.getElementById('modalRegistrasi').style.display = 'none';
+            document.getElementById('halamanBeranda').style.display = 'flex';
+            document.body.classList.remove('modal-open');
+            window.scrollTo(0, 0);
+            
+            // window.location.href = 'login.html'; // Teks asli tetap ada tapi aku matikan biar pop-upnya jalan
         }, 1000);
     });
 
@@ -46,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alertError.classList.add('show');
     }
 });
+// ... (SISA KODE ASLIMU SALIN KE SINI) ...
 
 //AKHIR REGISTRASI REGISTRASI//
 
