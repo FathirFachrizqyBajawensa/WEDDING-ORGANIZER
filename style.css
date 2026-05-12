@@ -205,7 +205,7 @@ body {
   font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em;
   text-transform: uppercase; color: var(--color-gold); margin-bottom: 1.5rem;
 }
-.hero-badge::before, .hero-badge::after { content: ''; width: 32px; height: 1px; background: var(--color-gold); }
+.hero-badge::before, .hero-badge::after { content: ''; width: 50px; height: 1px; background: var(--color-gold); }
 .hero-title {
   font-family: 'Cinzel', serif;
   font-size: clamp(2.4rem, 4.5vw, 4rem);
@@ -284,22 +284,21 @@ body {
 .hero-stat-num { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--color-gold); display: block; }
 .hero-stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,240,228,0.5); margin-top: 2px; }
 
-@keyframes pulseLogo {
-  from { transform: scale(1); }
-  to { transform: scale(1.05); }
-}
-@keyframes rotateSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
 
 /* ================================================
@@ -606,3 +605,72 @@ main {
     min-height: 100vh;
 }
 .main-content { flex: 1; }
+/* =============================================================================================
+   TAMBAHAN ANIMASI (DITAMBAHKAN TANPA MENGUBAH KODE DI ATAS)
+   ============================================================================================= */
+
+/* 1. ANIMASI NAVIGASI: Line Hover & Click Effect */
+.nav-links a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:active {
+    transform: scale(0.9);
+    transition: 0.1s;
+}
+
+/* 2. ANIMASI TRANSISI: Registrasi ke Beranda (Smooth Entrance) */
+#halamanBeranda:not(.content-hidden) {
+    animation: entranceEffect 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes entranceEffect {
+    0% { opacity: 0; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* 3. ANIMASI SCROLL: Fade-Up untuk Section */
+/* Note: Pastikan elemen yang mau dianimasikan punya class "reveal" */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 4. ANIMASI BUTTONS: Hover Glow */
+.btn-primary:hover, .btn-submit:hover {
+    box-shadow: 0 0 20px rgba(201, 169, 110, 0.4);
+    letter-spacing: 0.2em;
+}
+
+/* 5. ANIMASI REGISTER FORM: Fade-In */
+.register-form-inner {
+    animation: formSlideIn 0.8s ease-out;
+}
+
+@keyframes formSlideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
