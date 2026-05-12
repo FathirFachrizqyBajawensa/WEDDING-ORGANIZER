@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btnSubmit.disabled = true;
 
         setTimeout(() => {
-            alert("Akun berhasil dibuat!");
-            
             // --- TAMBAHAN: NUTUP MODAL & BUKA BERANDA ---
             document.getElementById('modalRegistrasi').style.display = 'none';
-            document.getElementById('halamanBeranda').style.display = 'flex';
+            const beranda = document.getElementById('halamanBeranda');
+            beranda.style.display = 'flex';
+            beranda.classList.remove('content-hidden');
             document.body.classList.remove('modal-open');
             window.scrollTo(0, 0);
             
@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alertError.classList.add('show');
     }
 });
-// ... (SISA KODE ASLIMU SALIN KE SINI) ...
 
 //AKHIR REGISTRASI REGISTRASI//
 
@@ -83,3 +82,41 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.1 });
     reveals.forEach(el => observer.observe(el));
+
+    // ===========================================//
+    // Memperbaiki Navigasi Beranda agar tidak pindah file
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const target = link.getAttribute('href');
+
+        // Kalau yang diklik adalah link internal (diawali #)
+        if (target.startsWith('#')) {
+            e.preventDefault(); // Stop browser biar gak pindah halaman/file
+
+            // 1. Sembunyikan Modal/Overlay Registrasi
+            const overlay = document.querySelector('.overlay-registrasi') || document.querySelector('.overlay-modal');
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+
+            // 2. Pastikan Halaman Beranda muncul
+            const beranda = document.getElementById('halamanBeranda');
+            if (beranda) {
+                beranda.style.display = 'flex';
+                beranda.classList.remove('content-hidden');
+            }
+
+            // 3. Aktifkan scroll lagi di body
+            document.body.classList.remove('modal-open');
+
+            // 4. Lari ke bagian (section) yang dituju
+            const section = document.querySelector(target);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80, // Biar gak kepotong navbar
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
