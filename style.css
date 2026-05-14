@@ -105,6 +105,242 @@ body {
 
 /*========================================AKHIR     L===============CSS=REGISTER==============================================================*/
 
+/* ================================================
+   LOGIN — Bagian [nama kamu]
+   ================================================ */
+
+.overlay-login {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--color-dark-green);
+  z-index: 10000;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.login-brand-panel {
+  background: var(--color-dark-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-decoration { position: absolute; inset: 0; pointer-events: none; }
+
+.brand-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(201,169,110,0.15);
+  transform: translate(-50%,-50%);
+  animation: rotateSlow 40s linear infinite;
+}
+.brand-ring--outer { width: 500px; height: 500px; }
+.brand-ring--inner {
+  width: 360px; height: 360px;
+  border-style: dashed;
+  border-color: rgba(179,175,140,0.12);
+  animation-direction: reverse;
+  animation-duration: 25s;
+}
+
+.brand-logo-text {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(201,169,110,0.5);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: var(--color-gold);
+  background: rgba(242,240,228,0.05);
+  margin: 0 auto 0.5rem;
+  animation: pulseLogo 3s ease-in-out infinite alternate;
+}
+
+.brand-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 1rem;
+}
+
+.brand-content h1 {
+  font-family: 'Cinzel', serif;
+  color: var(--color-gold);
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+}
+
+.brand-content > p {
+  color: var(--color-cream);
+  font-size: 0.88rem;
+  opacity: 0.75;
+  max-width: 280px;
+  line-height: 1.7;
+}
+
+.brand-divider {
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.brand-divider span:not(.brand-divider-diamond) {
+  width: 40px; height: 1px;
+  background: rgba(201,169,110,0.4);
+}
+.brand-divider-diamond { color: var(--color-gold); font-size: 0.5rem; }
+
+.brand-tagline {
+  font-size: 0.62rem !important;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-sage) !important;
+  opacity: 0.9 !important;
+}
+
+.login-form-panel {
+  background: var(--color-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 8%;
+}
+
+.login-form-inner {
+  width: 100%; max-width: 460px;
+  animation: formSlideIn 0.8s ease-out;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.label-row .form-label { margin-bottom: 0; }
+
+.forgot-link {
+  font-size: 0.68rem;
+  color: var(--color-gold);
+  text-decoration: none;
+  font-weight: 500;
+}
+.forgot-link:hover { opacity: 0.75; }
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute; left: 0.9rem;
+  color: var(--color-taupe);
+  display: flex; align-items: center;
+  pointer-events: none;
+}
+
+.login-form-panel .form-input {
+  padding: 0.85rem 2.8rem;
+}
+
+.toggle-password {
+  position: absolute; right: 0.9rem;
+  background: none; border: none;
+  cursor: pointer;
+  color: var(--color-taupe);
+  display: flex; align-items: center;
+  padding: 0; transition: color 0.2s;
+}
+.toggle-password:hover { color: var(--color-dark-green); }
+
+.form-remember { margin-bottom: 1.5rem; }
+
+.checkbox-label {
+  display: flex; align-items: center;
+  gap: 0.6rem; cursor: pointer; user-select: none;
+}
+.checkbox-label input[type="checkbox"] { display: none; }
+
+.checkbox-custom {
+  width: 16px; height: 16px;
+  border: 1px solid rgba(154,141,123,0.5);
+  border-radius: 2px;
+  background: var(--color-white);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; flex-shrink: 0;
+}
+.checkbox-label input:checked + .checkbox-custom {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.checkbox-label input:checked + .checkbox-custom::after {
+  content: '';
+  width: 5px; height: 8px;
+  border-right: 2px solid var(--color-dark-green);
+  border-bottom: 2px solid var(--color-dark-green);
+  transform: rotate(45deg) translateY(-1px);
+  display: block;
+}
+.checkbox-text { font-size: 0.75rem; color: var(--color-text-muted); }
+
+.form-alert.success {
+  background: #f0f7f2;
+  border: 1px solid #c3e6cb;
+  color: #2d6a4f;
+}
+
+.login-divider {
+  display: flex; align-items: center;
+  gap: 1rem; margin: 1.4rem 0 1rem;
+}
+.login-divider span:not(.divider-text) {
+  flex: 1; height: 1px;
+  background: rgba(154,141,123,0.25);
+}
+.divider-text {
+  font-size: 0.68rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--color-text-muted);
+}
+
+.btn-guest {
+  display: block; width: 100%;
+  text-align: center; padding: 0.85rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--color-text-muted);
+  border: 1px solid rgba(154,141,123,0.35);
+  border-radius: 2px;
+  background: transparent; cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-guest:hover {
+  border-color: var(--color-taupe);
+  color: var(--color-text-dark);
+  background: rgba(154,141,123,0.06);
+}
+
+@keyframes spinIcon {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@media (max-width: 850px) {
+  .login-wrapper { grid-template-columns: 1fr; }
+  .login-brand-panel { display: none; }
+  .login-form-panel { min-height: 100vh; padding-top: 4rem; }
+}
 
 /*=========================================================BERANDA===============================================================*/
 
