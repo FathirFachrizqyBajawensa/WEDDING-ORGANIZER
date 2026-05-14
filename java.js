@@ -229,3 +229,11 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     alertError.classList.add('show');
   }
 })();
+// Tombol Masuk di navbar → buka modal login
+document.getElementById('btnBukaLogin')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('modalRegistrasi').style.display = 'none';
+  document.getElementById('halamanBeranda').style.display  = 'none';
+  document.getElementById('modalLogin').style.display = 'flex';
+  document.body.classList.add('modal-open');
+});
