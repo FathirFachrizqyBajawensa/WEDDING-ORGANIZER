@@ -175,8 +175,17 @@ if (linkKeLogin) {
         e.preventDefault();
         document.getElementById('modalRegistrasi').style.display = 'none';
         document.getElementById('modalLogin').style.display = 'flex';
+        
     });
 }
         }
     });
 });
+function showPage(pageId) {
+  // sembunyikan semua page
+  const pages = document.querySelectorAll(".page");
+  pages.forEach(page => page.classList.remove("active"));
+
+  // tampilkan page yang dipilih
+  document.getElementById(pageId).classList.add("active");
+}
