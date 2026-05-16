@@ -134,114 +134,40 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================================
 // LOGIN
 // ============================================================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", function () {
+    const btnBukaLogin = document.getElementById("btnBukaLogin");
+    const modalLogin = document.getElementById("modalLogin");
+    const modalRegistrasi = document.getElementById("modalRegistrasi");
+    const linkKeDaftar = document.getElementById("linkKeDaftar");
 
-    const loginForm    = document.getElementById('loginForm');
-    if (!loginForm) return;
-
-    const alertError   = document.getElementById('loginAlertError');
-    const alertSuccess = document.getElementById('loginAlertSuccess');
-    const alertErrMsg  = document.getElementById('loginAlertErrorMsg');
-    const alertSucMsg  = document.getElementById('loginAlertSuccessMsg');
-    const btnSubmit    = document.getElementById('loginBtnSubmit');
-    const btnText      = btnSubmit.querySelector('.login-btn-text');
-    const btnSpinner   = document.getElementById('loginBtnSpinner');
-    const togglePass   = document.getElementById('togglePassword');
-    const passInput    = document.getElementById('loginPassword');
-    const emailInput   = document.getElementById('loginEmail');
-    const rememberMe   = document.getElementById('rememberMe');
-
-    // Tombol "Daftar Sekarang" di dalam login → kembali ke registrasi
-    document.getElementById('linkKeDaftar')?.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('modalLogin').style.display = 'none';
-        document.getElementById('modalRegistrasi').style.display = 'flex';
-    });
-
-    // Tombol "Lanjutkan sebagai Tamu"
-    document.getElementById('btnGuest')?.addEventListener('click', () => {
-        document.getElementById('modalLogin').style.display = 'none';
-        const beranda = document.getElementById('halamanBeranda');
-        beranda.style.display = 'flex';
-        beranda.classList.remove('content-hidden');
-        document.body.classList.remove('modal-open');
-        window.scrollTo(0, 0);
-    });
-
-    // Remember Me — isi ulang email kalau pernah disimpan
-    const savedEmail = localStorage.getItem('luminara_remember_email');
-    if (savedEmail && emailInput) {
-        emailInput.value = savedEmail;
-        if (rememberMe) rememberMe.checked = true;
+    // Tombol Masuk di navbar
+    if (btnBukaLogin) {
+        btnBukaLogin.addEventListener("click", function (e) {
+            e.preventDefault();
+            modalLogin.style.display = "flex";
+            document.body.classList.add("modal-open");
+        });
     }
 
-    // Toggle tampilkan/sembunyikan sandi
-    togglePass?.addEventListener('click', () => {
-        const show = passInput.type === 'password';
-        passInput.type = show ? 'text' : 'password';
-        togglePass.querySelector('.eye-icon').style.display     = show ? 'none'   : 'inline';
-        togglePass.querySelector('.eye-off-icon').style.display = show ? 'inline' : 'none';
-    });
-
-    // Submit login
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const email = emailInput.value.trim();
-        const pass  = passInput.value;
-
-        alertError.classList.remove('show');
-        alertSuccess.classList.remove('show');
-
-        if (!email || !pass) {
-            return showLoginError('Mohon isi email dan kata sandi terlebih dahulu.');
-        }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            return showLoginError('Format email tidak valid.');
-        }
-        if (pass.length < 6) {
-            return showLoginError('Kata sandi minimal 6 karakter.');
-        }
-
-        // Loading
-        btnText.style.display    = 'none';
-        btnSpinner.style.display = 'inline-flex';
-        btnSubmit.disabled = true;
-
-        if (rememberMe && rememberMe.checked) {
-            localStorage.setItem('luminara_remember_email', email);
-        } else {
-            localStorage.removeItem('luminara_remember_email');
-        }
-
-        setTimeout(() => {
-            btnText.style.display    = 'inline';
-            btnSpinner.style.display = 'none';
-            btnSubmit.disabled = false;
-
-            // ✅ Simulasi berhasil — ganti dengan validasi backend nanti
-            alertSucMsg.textContent = 'Login berhasil! Mengarahkan ke beranda...';
-            alertSuccess.classList.add('show');
-
-            setTimeout(() => {
-                document.getElementById('modalLogin').style.display = 'none';
-                const beranda = document.getElementById('halamanBeranda');
-                beranda.style.display = 'flex';
-                beranda.classList.remove('content-hidden');
-                document.body.classList.remove('modal-open');
-                window.scrollTo(0, 0);
-            }, 1200);
-        }, 1000);
-    });
-
-    // Hapus error saat user mulai ketik
-    [emailInput, passInput].forEach(inp => {
-        inp?.addEventListener('input', () => alertError.classList.remove('show'));
-    });
-
-    function showLoginError(msg) {
-        alertErrMsg.textContent = msg;
-        alertError.classList.add('show');
+    // Link "Registrasi di sini"
+    if (linkKeDaftar) {
+        linkKeDaftar.addEventListener("click", function (e) {
+            e.preventDefault();
+            modalLogin.style.display = "none";
+            modalRegistrasi.style.display = "flex";
+        });
     }
 
+    // Klik area luar modal untuk menutup
+    window.addEventListener("click", function (e) {
+        if (e.target === modalLogin) {
+            modalLogin.style.display = "none";
+            document.body.classList.remove("modal-open");
+        }
+
+        if (e.target === modalRegistrasi) {
+            modalRegistrasi.style.display = "none";
+            document.body.classList.remove("modal-open");
+        }
+    });
 });
