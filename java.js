@@ -1,48 +1,3 @@
-//AWAL REGISTRASI//
-document.addEventListener('DOMContentLoaded', () => {
-    const registerForm = document.getElementById('registerForm');
-    const alertError = document.getElementById('alertError');
-    const alertMsg = document.getElementById('alertErrorMsg');
-    const btnSubmit = document.getElementById('btnSubmit');
-
-    registerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const pass = document.getElementById('password').value;
-        const confirm = document.getElementById('confirmPassword').value;
-        const fullname = document.getElementById('fullname').value;
-        const email = document.getElementById('email').value;
-
-        if (!fullname || !email || !pass || !confirm) {
-            showError("Mohon lengkapi semua data.");
-            return;
-        }
-        if (pass !== confirm) {
-            showError("Konfirmasi kata sandi tidak cocok.");
-            return;
-        }
-        if (pass.length < 6) {
-            showError("Kata sandi minimal 6 karakter.");
-            return;
-        }
-
-        alertError.classList.remove('show');
-        btnSubmit.textContent = "Memproses...";
-        btnSubmit.disabled = true;
-
-        setTimeout(() => {
-            // Setelah daftar → langsung ke halaman login
-            document.getElementById('modalRegistrasi').style.display = 'none';
-            document.getElementById('modalLogin').style.display = 'flex';
-        }, 1000);
-    });
-
-    function showError(message) {
-        alertMsg.textContent = message;
-        alertError.classList.add('show');
-    }
-});
-//AKHIR REGISTRASI//
 
 
 // ============================================================
@@ -130,6 +85,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+//AWAL REGISTRASI//
+document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('registerForm');
+    const alertError = document.getElementById('alertError');
+    const alertMsg = document.getElementById('alertErrorMsg');
+    const btnSubmit = document.getElementById('btnSubmit');
+
+    registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const pass = document.getElementById('password').value;
+        const confirm = document.getElementById('confirmPassword').value;
+        const fullname = document.getElementById('fullname').value;
+        const email = document.getElementById('email').value;
+
+        if (!fullname || !email || !pass || !confirm) {
+            showError("Mohon lengkapi semua data.");
+            return;
+        }
+        if (pass !== confirm) {
+            showError("Konfirmasi kata sandi tidak cocok.");
+            return;
+        }
+        if (pass.length < 6) {
+            showError("Kata sandi minimal 6 karakter.");
+            return;
+        }
+
+        alertError.classList.remove('show');
+        btnSubmit.textContent = "Memproses...";
+        btnSubmit.disabled = true;
+
+        setTimeout(() => {
+            // Setelah daftar → langsung ke halaman login
+            document.getElementById('modalRegistrasi').style.display = 'none';
+            document.getElementById('modalLogin').style.display = 'flex';
+        }, 1000);
+    });
+
+    function showError(message) {
+        alertMsg.textContent = message;
+        alertError.classList.add('show');
+    }
+});
+//AKHIR REGISTRASI//
 
 // ============================================================
 // LOGIN
