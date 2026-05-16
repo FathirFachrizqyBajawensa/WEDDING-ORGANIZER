@@ -1,5 +1,3 @@
-
-
 // ============================================================
 // NAVBAR, HAMBURGER, SCROLL REVEAL
 // Dipindah ke dalam DOMContentLoaded supaya tidak error
