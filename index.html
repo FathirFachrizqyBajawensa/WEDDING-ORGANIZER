@@ -14,179 +14,7 @@
 
 <body class="modal-open">
 
-  <!-- ================================= AWAL REGISTRASI ================================= -->
-
-  <div id="modalRegistrasi" class="overlay-registrasi">
-    <main class="register-wrapper">
-
-      <div class="register-brand-panel">
-        <div class="brand-content">
-          <h1>Bergabunglah</h1>
-          <p>Wujudkan pernikahan impian Anda bersama layanan profesional dari Luminara Wedding Organizer.</p>
-        </div>
-      </div>
-
-      <div class="register-form-panel">
-        <div class="register-form-inner">
-
-          <div class="form-eyebrow">Akun Baru</div>
-          <h2 class="form-title">Daftar Sekarang</h2>
-
-          <div class="form-alert error" id="alertError">
-            <span id="alertErrorMsg">Terjadi kesalahan.</span>
-          </div>
-
-          <form id="registerForm">
-            <div class="form-grid">
-
-              <div class="form-group full-width">
-                <label class="form-label">Nama Lengkap</label>
-                <input type="text" id="fullname" class="form-input" placeholder="Nama lengkap Anda">
-              </div>
-
-              <div class="form-group full-width">
-                <label class="form-label">Alamat Email</label>
-                <input type="email" id="email" class="form-input" placeholder="email@contoh.com">
-              </div>
-
-              <div class="form-group full-width">
-                <label class="form-label">Nomor WhatsApp</label>
-                <input type="tel" id="whatsapp" class="form-input" placeholder="0812xxxxxxxx">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Kata Sandi</label>
-                <input type="password" id="password" class="form-input" placeholder="Min. 6 karakter">
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Konfirmasi</label>
-                <input type="password" id="confirmPassword" class="form-input" placeholder="Ulangi sandi">
-              </div>
-
-            </div>
-
-            <button type="submit" class="btn-submit" id="btnSubmit">Buat Akun</button>
-          </form>
-
-          <div class="login-redirect">
-            Sudah memiliki akun? <a href="login.html">Masuk</a>
-          </div>
-
-        </div>
-      </div>
-
-    </main>
-  </div>
-
-  <!-- ================================= PENUTUP REGISTRASI ================================= -->
-
-
-
-  <!-- ================================= LOGIN ================================= -->
-<div id="modalLogin" class="overlay-login" style="display:none;">
-  <main class="login-wrapper">
-
-    <div class="login-brand-panel">
-      <div class="brand-decoration">
-        <div class="brand-ring brand-ring--outer"></div>
-        <div class="brand-ring brand-ring--inner"></div>
-      </div>
-      <div class="brand-content">
-        <div class="brand-logo-text">L</div>
-        <h1>Selamat Datang</h1>
-        <p>Masuk ke akun Anda dan lanjutkan merencanakan hari paling istimewa dalam hidup Anda.</p>
-        <div class="brand-divider">
-          <span></span><span class="brand-divider-diamond">◆</span><span></span>
-        </div>
-        <p class="brand-tagline">Crafting Timeless Moments</p>
-      </div>
-    </div>
-
-    <div class="login-form-panel">
-      <div class="login-form-inner">
-
-        <div class="form-eyebrow">Akun Anda</div>
-        <h2 class="form-title">Masuk</h2>
-
-        <div class="form-alert error" id="loginAlertError">
-          <span id="loginAlertErrorMsg">Terjadi kesalahan.</span>
-        </div>
-        <div class="form-alert success" id="loginAlertSuccess">
-          <span id="loginAlertSuccessMsg">Login berhasil!</span>
-        </div>
-
-        <form id="loginForm">
-
-          <div class="form-group">
-            <label class="form-label">Alamat Email</label>
-            <div class="input-wrapper">
-              <span class="input-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                </svg>
-              </span>
-              <input type="email" id="loginEmail" class="form-input" placeholder="email@contoh.com">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="label-row">
-              <label class="form-label">Kata Sandi</label>
-              <a href="#" class="forgot-link">Lupa sandi?</a>
-            </div>
-            <div class="input-wrapper">
-              <span class="input-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
-              </span>
-              <input type="password" id="loginPassword" class="form-input" placeholder="Kata sandi Anda">
-              <button type="button" class="toggle-password" id="togglePassword">
-                <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
-                </svg>
-                <svg class="eye-off-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
-                  <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div class="form-remember">
-            <label class="checkbox-label">
-              <input type="checkbox" id="rememberMe">
-              <span class="checkbox-custom"></span>
-              <span class="checkbox-text">Ingat saya</span>
-            </label>
-          </div>
-
-          <button type="submit" class="btn-submit" id="loginBtnSubmit">
-            <span class="login-btn-text">Masuk</span>
-            <span id="loginBtnSpinner" style="display:none">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spinIcon .8s linear infinite">
-                <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
-              </svg>
-            </span>
-          </button>
-
-        </form>
-
-        <div class="register-redirect">
-          Belum memiliki akun? <a href="#" id="linkKeDaftar">Daftar Sekarang</a>
-        </div>
-
-        <div class="login-divider">
-          <span></span><span class="divider-text">atau</span><span></span>
-        </div>
-
-        <button class="btn-guest" id="btnGuest">Lanjutkan sebagai Tamu</button>
-
-      </div>
-    </div>
-
-  </main>
-</div>
+ 
 
 
   <!-- ================================= BERANDA ================================= -->
@@ -366,6 +194,181 @@
 
     <!--=================================================================== LAYER 4 =============================================================-->
 
+
+    
+ <!-- ================================= AWAL REGISTRASI ================================= -->
+
+  <div id="modalRegistrasi" class="overlay-registrasi">
+    <main class="register-wrapper">
+
+      <div class="register-brand-panel">
+        <div class="brand-content">
+          <h1>Bergabunglah</h1>
+          <p>Wujudkan pernikahan impian Anda bersama layanan profesional dari Luminara Wedding Organizer.</p>
+        </div>
+      </div>
+
+      <div class="register-form-panel">
+        <div class="register-form-inner">
+
+          <div class="form-eyebrow">Akun Baru</div>
+          <h2 class="form-title">Daftar Sekarang</h2>
+
+          <div class="form-alert error" id="alertError">
+            <span id="alertErrorMsg">Terjadi kesalahan.</span>
+          </div>
+
+          <form id="registerForm">
+            <div class="form-grid">
+
+              <div class="form-group full-width">
+                <label class="form-label">Nama Lengkap</label>
+                <input type="text" id="fullname" class="form-input" placeholder="Nama lengkap Anda">
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Alamat Email</label>
+                <input type="email" id="email" class="form-input" placeholder="email@contoh.com">
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Nomor WhatsApp</label>
+                <input type="tel" id="whatsapp" class="form-input" placeholder="0812xxxxxxxx">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Kata Sandi</label>
+                <input type="password" id="password" class="form-input" placeholder="Min. 6 karakter">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Konfirmasi</label>
+                <input type="password" id="confirmPassword" class="form-input" placeholder="Ulangi sandi">
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn-submit" id="btnSubmit">Buat Akun</button>
+          </form>
+
+          <div class="login-redirect">
+            Sudah memiliki akun? <a href="login.html">Masuk</a>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ================================= PENUTUP REGISTRASI ================================= -->
+
+
+
+  <!-- ================================= LOGIN ================================= -->
+<div id="modalLogin" class="overlay-login" style="display:none;">
+  <main class="login-wrapper">
+
+    <div class="login-brand-panel">
+      <div class="brand-decoration">
+        <div class="brand-ring brand-ring--outer"></div>
+        <div class="brand-ring brand-ring--inner"></div>
+      </div>
+      <div class="brand-content">
+        <div class="brand-logo-text">L</div>
+        <h1>Selamat Datang</h1>
+        <p>Masuk ke akun Anda dan lanjutkan merencanakan hari paling istimewa dalam hidup Anda.</p>
+        <div class="brand-divider">
+          <span></span><span class="brand-divider-diamond">◆</span><span></span>
+        </div>
+        <p class="brand-tagline">Crafting Timeless Moments</p>
+      </div>
+    </div>
+
+    <div class="login-form-panel">
+      <div class="login-form-inner">
+
+        <div class="form-eyebrow">Akun Anda</div>
+        <h2 class="form-title">Masuk</h2>
+
+        <div class="form-alert error" id="loginAlertError">
+          <span id="loginAlertErrorMsg">Terjadi kesalahan.</span>
+        </div>
+        <div class="form-alert success" id="loginAlertSuccess">
+          <span id="loginAlertSuccessMsg">Login berhasil!</span>
+        </div>
+
+        <form id="loginForm">
+
+          <div class="form-group">
+            <label class="form-label">Alamat Email</label>
+            <div class="input-wrapper">
+              <span class="input-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </span>
+              <input type="email" id="loginEmail" class="form-input" placeholder="email@contoh.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="label-row">
+              <label class="form-label">Kata Sandi</label>
+              <a href="#" class="forgot-link">Lupa sandi?</a>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </span>
+              <input type="password" id="loginPassword" class="form-input" placeholder="Kata sandi Anda">
+              <button type="button" class="toggle-password" id="togglePassword">
+                <svg class="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="eye-off-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+                  <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-remember">
+            <label class="checkbox-label">
+              <input type="checkbox" id="rememberMe">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-text">Ingat saya</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit" id="loginBtnSubmit">
+            <span class="login-btn-text">Masuk</span>
+            <span id="loginBtnSpinner" style="display:none">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spinIcon .8s linear infinite">
+                <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+              </svg>
+            </span>
+          </button>
+
+        </form>
+
+        <div class="register-redirect">
+          Belum memiliki akun? <a href="#" id="linkKeDaftar">Daftar Sekarang</a>
+        </div>
+
+        <div class="login-divider">
+          <span></span><span class="divider-text">atau</span><span></span>
+        </div>
+
+        <button class="btn-guest" id="btnGuest">Lanjutkan sebagai Tamu</button>
+
+      </div>
+    </div>
+
+  </main>
+</div>
     <!--PAKET-->
 
 
