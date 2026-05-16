@@ -168,6 +168,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.target === modalRegistrasi) {
             modalRegistrasi.style.display = "none";
             document.body.classList.remove("modal-open");
+            const linkKeLogin = document.getElementById('linkKeLogin');
+
+if (linkKeLogin) {
+    linkKeLogin.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('modalRegistrasi').style.display = 'none';
+        document.getElementById('modalLogin').style.display = 'flex';
+    });
+}
         }
     });
 });
