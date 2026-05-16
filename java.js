@@ -134,53 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================================
 // LOGIN
 // ============================================================
-document.addEventListener("DOMContentLoaded", function () {
-    const btnBukaLogin = document.getElementById("btnBukaLogin");
-    const modalLogin = document.getElementById("modalLogin");
-    const modalRegistrasi = document.getElementById("modalRegistrasi");
-    const linkKeDaftar = document.getElementById("linkKeDaftar");
 
-    // Tombol Masuk di navbar
-    if (btnBukaLogin) {
-        btnBukaLogin.addEventListener("click", function (e) {
-            e.preventDefault();
-            modalLogin.style.display = "flex";
-            document.body.classList.add("modal-open");
-        });
-    }
-
-    // Link "Registrasi di sini"
-    if (linkKeDaftar) {
-        linkKeDaftar.addEventListener("click", function (e) {
-            e.preventDefault();
-            modalLogin.style.display = "none";
-            modalRegistrasi.style.display = "flex";
-        });
-    }
-
-    // Klik area luar modal untuk menutup
-    window.addEventListener("click", function (e) {
-        if (e.target === modalLogin) {
-            modalLogin.style.display = "none";
-            document.body.classList.remove("modal-open");
-        }
-
-        if (e.target === modalRegistrasi) {
-            modalRegistrasi.style.display = "none";
-            document.body.classList.remove("modal-open");
-            const linkKeLogin = document.getElementById('linkKeLogin');
-
-if (linkKeLogin) {
-    linkKeLogin.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.getElementById('modalRegistrasi').style.display = 'none';
-        document.getElementById('modalLogin').style.display = 'flex';
-        
-    });
-}
-        }
-    });
-});
 function showPage(pageId) {
   // sembunyikan semua page
   const pages = document.querySelectorAll(".page");
