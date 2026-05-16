@@ -19,7 +19,8 @@ body {
   color: var(--color-text-dark);
   min-height: 100vh;
 }
-
+.page.active{
+  display:block;}
 /* REGISTER WRAPPER */
 .register-wrapper {
   min-height: 100vh;
